@@ -116,9 +116,10 @@ public class BankCard {
             if(newPin.length() > 6) return ValidationError.PIN_BIGGER_MAXIMUM;
             
             this.cardPinCode = newPin;
-            
+            this.writeToFile();
+
             return null;
-        } catch(NumberFormatException e) {
+        } catch(NumberFormatException | IOException e) {
             return ValidationError.NOT_A_NUMBER;
         }
     }

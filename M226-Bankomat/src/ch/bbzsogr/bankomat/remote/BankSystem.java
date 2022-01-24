@@ -5,18 +5,28 @@
  */
 package ch.bbzsogr.bankomat.remote;
 
-import ch.bbzsogr.bankomat.CardValidation;
+import java.io.File;
+import java.io.IOException;
 
 /**
  *
  * @author PlayWolfYT
  */
-public class BankSystem implements CardValidation {
+public class BankSystem {
     
-    @Override
-    public boolean doValidation() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static final File BANK_FILE = new File("./resources/bank.csv");
+
+    public BankSystem() {
+        // Check if bank file actually exists, otherwise create the folders and the file itself.
+        if(!BANK_FILE.exists()) {
+            try {
+                new File("./resources").mkdir();
+                BANK_FILE.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.exit(-1);
+            }
+        }
     }
-    
     
 }
