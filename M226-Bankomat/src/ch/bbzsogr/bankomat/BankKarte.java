@@ -27,9 +27,9 @@ public class BankKarte {
     private String cardIBAN;
     private String cardBankName;
     private String cardNumber;
-    private int cardExpirationMonth;
-    private int cardExpirationYear;
-    private int cardPinCode;
+    private String cardExpirationMonth;
+    private String cardExpirationYear;
+    private String cardPinCode;
     
     /**
      * Creates a new BankKarte instance. This instance then contains all the information about the card that it needs.
@@ -52,45 +52,17 @@ public class BankKarte {
      */
     private void loadFromFile() throws FileNotFoundException, IOException {
         BufferedReader reader = new BufferedReader(new FileReader(this.cardFile));
+        String data = reader.readLine();
         
-        // TODO: Fix this
-        
-        char[] surnameBuffer = new char[18];
-        reader.read(surnameBuffer, 0, surnameBuffer.length);
-        
-        char[] nameBuffer = new char[12];
-        reader.read(nameBuffer, 18, nameBuffer.length);
-        
-        char[] accountDesignationBuffer = new char[24];
-        reader.read(accountDesignationBuffer, 30, accountDesignationBuffer.length);
-        
-        char[] ibanBuffer = new char[26];
-        reader.read(ibanBuffer, 54, ibanBuffer.length);
-        
-        char[] bankNameBuffer = new char[25];
-        reader.read(bankNameBuffer, 80, bankNameBuffer.length);
-        
-        char[] cardNumberBuffer = new char[7];
-        reader.read(cardNumberBuffer, 105, cardNumberBuffer.length);
-        
-        char[] expirationMonthBuffer = new char[2];
-        reader.read(expirationMonthBuffer, 112, expirationMonthBuffer.length);
-        
-        char[] expirationYearBuffer = new char[2];
-        reader.read(expirationYearBuffer, 114, expirationYearBuffer.length);
-        
-        char[] pinCodeBuffer = new char[6];
-        reader.read(pinCodeBuffer, 116, pinCodeBuffer.length);
-        
-        this.cardSurname = String.valueOf(surnameBuffer).trim();
-        this.cardName = String.valueOf(nameBuffer).trim();
-        this.cardAccountDesignation = String.valueOf(accountDesignationBuffer).trim();
-        this.cardIBAN = String.valueOf(ibanBuffer).trim();
-        this.cardBankName = String.valueOf(bankNameBuffer).trim();
-        this.cardNumber = String.valueOf(cardNumberBuffer).trim();
-        this.cardExpirationMonth = Integer.parseInt(String.valueOf(expirationMonthBuffer));
-        this.cardExpirationYear = Integer.parseInt(String.valueOf(expirationYearBuffer));
-        this.cardPinCode = Integer.parseInt(String.valueOf(pinCodeBuffer));
+        this.cardSurname = data.substring(0, 18).trim();
+        this.cardName = data.substring(18, 30).trim();
+        this.cardAccountDesignation = data.substring(30, 54).trim();
+        this.cardIBAN = data.substring(54, 80).trim();
+        this.cardBankName = data.substring(80, 105).trim();
+        this.cardNumber = data.substring(105, 112).trim();
+        this.cardExpirationMonth = data.substring(112, 114).trim();
+        this.cardExpirationYear = data.substring(114, 116).trim();
+        this.cardPinCode = data.substring(116, 122).trim();
     }
     
     public void writeToFile() throws IOException {
@@ -101,15 +73,15 @@ public class BankKarte {
             Arrays.fill(data, ' ');
             
             // Now override the spaces with the actual data
-            System.arraycopy(this.cardSurname.toCharArray(),                        0, data, 0, 18);
-            System.arraycopy(this.cardName.toCharArray(),                           0, data, 18, 12);
-            System.arraycopy(this.cardAccountDesignation.toCharArray(),             0, data, 30, 24);
-            System.arraycopy(this.cardIBAN.toCharArray(),                           0, data, 54, 26);
-            System.arraycopy(this.cardBankName.toCharArray(),                       0, data, 80, 25);
-            System.arraycopy(this.cardNumber.toCharArray(),                         0, data, 105, 7);
-            System.arraycopy((""+this.cardExpirationMonth).toCharArray(),           0, data, 112, 2);
-            System.arraycopy((""+this.cardExpirationYear).toCharArray(),            0, data, 114, 2);
-            System.arraycopy((""+this.cardPinCode).toCharArray(),                   0, data, 116, 6);
+            System.arraycopy(this.cardSurname.toCharArray(),                        0, data, 0, Math.min(this.cardSurname.length(), 18));
+            System.arraycopy(this.cardName.toCharArray(),                           0, data, 18, Math.min(this.cardName.length(), 12));
+            System.arraycopy(this.cardAccountDesignation.toCharArray(),             0, data, 30, Math.min(this.cardAccountDesignation.length(), 24));
+            System.arraycopy(this.cardIBAN.toCharArray(),                           0, data, 54, Math.min(this.cardIBAN.length(), 26));
+            System.arraycopy(this.cardBankName.toCharArray(),                       0, data, 80, Math.min(this.cardBankName.length(), 25));
+            System.arraycopy(this.cardNumber.toCharArray(),                         0, data, 105, Math.min(this.cardNumber.length(), 7));
+            System.arraycopy(this.cardExpirationMonth.toCharArray(),                0, data, 112, Math.min(this.cardExpirationMonth.length(), 2));
+            System.arraycopy(this.cardExpirationYear.toCharArray(),                 0, data, 114, Math.min(this.cardExpirationYear.length(), 2));
+            System.arraycopy(this.cardPinCode.toCharArray(),                        0, data, 116, Math.min(this.cardPinCode.length(), 6));
             
             // write the data to the file
             writer.write(data);
