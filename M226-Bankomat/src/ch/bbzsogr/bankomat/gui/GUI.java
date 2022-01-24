@@ -10,7 +10,6 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 public class GUI extends Application {
 
