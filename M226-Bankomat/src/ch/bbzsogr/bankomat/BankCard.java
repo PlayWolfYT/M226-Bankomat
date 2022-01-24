@@ -104,7 +104,7 @@ public class BankCard {
             Integer.parseInt(newPin);
             
             // Check if the oldPin is correct
-            if(!this.cardPinCode.equals(oldPin)) return ValidationError.INVALID_PIN;
+            if(!validatePin(oldPin)) return ValidationError.INVALID_PIN;
             
             // Pin cannot be the same
             if(oldPin.equals(newPin)) return ValidationError.PIN_SAME_AS_OLD;
@@ -117,6 +117,13 @@ public class BankCard {
             
             this.cardPinCode = newPin;
             
+            // Save new pin to file
+            try {
+                this.writeToFile();
+            } catch (IOException e) {
+                return ValidationError.UNKNOWN;
+            }
+
             return null;
         } catch(NumberFormatException e) {
             return ValidationError.NOT_A_NUMBER;
@@ -132,6 +139,7 @@ public class BankCard {
         INVALID_PIN,
         PIN_SAME_AS_OLD,
         PIN_SMALLER_MINIMUM,
-        PIN_BIGGER_MAXIMUM;
+        PIN_BIGGER_MAXIMUM,
+        UNKNOWN;
     }
 }
