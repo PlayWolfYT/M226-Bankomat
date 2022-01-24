@@ -17,7 +17,7 @@ import java.util.Arrays;
  *
  * @author PlayWolfYT
  */
-public class BankKarte {
+public class BankCard {
     
     private final File cardFile;
     
@@ -37,7 +37,7 @@ public class BankKarte {
      * @throws FileNotFoundException If the specified file does not exist.
      * @throws IOException If the specified file could not get read for some reason.
      */
-    public BankKarte(File cardFile) throws FileNotFoundException, IOException {
+    public BankCard(File cardFile) throws FileNotFoundException, IOException {
         this.cardFile = cardFile;
         loadFromFile();
     }
@@ -65,7 +65,7 @@ public class BankKarte {
         this.cardPinCode = data.substring(116, 122).trim();
     }
     
-    public void writeToFile() throws IOException {
+    private void writeToFile() throws IOException {
         // Create the writer
         try (FileWriter writer = new FileWriter(this.cardFile)) {
             // Fill data with spaces
@@ -87,5 +87,50 @@ public class BankKarte {
             writer.write(data);
             writer.flush();
         }
+    }
+    
+    /**
+     * Changes the card pin. 
+     * @param oldPin The old pin of the card
+     * @param newPin The new pin of the card
+     * @return The error that occured or null if successful.
+     */
+    public ValidationError changePin(String oldPin, String newPin) {
+        // First validate that the input is a number
+        try {
+            // Try to trigger the NumberFormatException
+            Integer.parseInt(oldPin);
+            Integer.parseInt(newPin);
+            
+            // Check if the oldPin is correct
+            if(!this.cardPinCode.equals(oldPin)) return ValidationError.INVALID_PIN;
+            
+            // Pin cannot be the same
+            if(oldPin.equals(newPin)) return ValidationError.PIN_SAME_AS_OLD;
+
+            // Check if the PIN is less than 4 characters
+            if(newPin.length() < 4) return ValidationError.PIN_SMALLER_MINIMUM;
+            
+            // Check if the PIN is more than 6 characters
+            if(newPin.length() > 6) return ValidationError.PIN_BIGGER_MAXIMUM;
+            
+            this.cardPinCode = newPin;
+            
+            return null;
+        } catch(NumberFormatException e) {
+            return ValidationError.NOT_A_NUMBER;
+        }
+    }
+    
+    public boolean validatePin(String pin) {
+        return this.cardPinCode.equals(pin);
+    }
+    
+    public static enum ValidationError {
+        NOT_A_NUMBER,
+        INVALID_PIN,
+        PIN_SAME_AS_OLD,
+        PIN_SMALLER_MINIMUM,
+        PIN_BIGGER_MAXIMUM;
     }
 }

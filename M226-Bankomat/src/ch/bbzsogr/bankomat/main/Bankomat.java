@@ -5,9 +5,10 @@
  */
 package ch.bbzsogr.bankomat.main;
 
-import ch.bbzsogr.bankomat.BankKarte;
+import ch.bbzsogr.bankomat.BankCard;
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  *
@@ -20,12 +21,34 @@ public class Bankomat {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        System.out.println("Test");
         
-        File file = new File("./cards/test.txt");
-        file.createNewFile();
-        BankKarte bankKarte = new BankKarte(file);
-        bankKarte.writeToFile();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter card number: ");
+        String cardNumber = scanner.nextLine();
+        System.out.println("card number: " + cardNumber);
+        
+        BankCard card = new BankCard(new File("./cards/" + cardNumber));
+        
+        int errorCount = 0;
+        while(true) {
+            System.out.print("Please enter card pin: ");
+            String pin = scanner.nextLine();
+            if(card.validatePin(pin)) {
+                System.out.println("Pin is valid");
+                break;
+            } else {
+                errorCount++;
+                if(errorCount >= 3) {
+                    // TODO: Consume card
+                    System.err.println("Incorrect pin 3 times. Consuming card");
+                    System.exit(0);
+                }
+                System.err.println("Invalid pin. Try again");
+            }
+        }
+        
+        System.out.println("READING FROM REMOTE BANK");
+        // TODO: Read data from remote
     }
     
 }
