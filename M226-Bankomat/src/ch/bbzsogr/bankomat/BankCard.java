@@ -63,6 +63,7 @@ public class BankCard {
         this.cardExpirationMonth = data.substring(112, 114).trim();
         this.cardExpirationYear = data.substring(114, 116).trim();
         this.cardPinCode = data.substring(116, 122).trim();
+        reader.close();
     }
     
     private void writeToFile() throws IOException {
