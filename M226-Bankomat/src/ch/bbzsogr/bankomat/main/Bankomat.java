@@ -25,7 +25,7 @@ public class Bankomat {
         String cardNumber = scanner.nextLine();
         System.out.println("card number: " + cardNumber);
         
-        BankCard card = new BankCard(new File("./cards/" + cardNumber));
+        BankCard card = new BankCard(new File("./resources/cards/" + cardNumber));
         
         int errorCount = 0;
         while(true) {
