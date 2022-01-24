@@ -6,7 +6,6 @@
 package ch.bbzsogr.bankomat.remote;
 
 import ch.bbzsogr.bankomat.CardValidation;
-import java.util.AbstractMap;
 
 /**
  *

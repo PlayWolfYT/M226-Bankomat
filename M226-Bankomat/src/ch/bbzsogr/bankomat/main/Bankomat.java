@@ -20,7 +20,7 @@ public class Bankomat {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        // TODO code application logic here
+        // TODO: code application logic here
         
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter card number: ");
@@ -49,6 +49,8 @@ public class Bankomat {
         
         System.out.println("READING FROM REMOTE BANK");
         // TODO: Read data from remote
+
+        scanner.close();
     }
     
 }
