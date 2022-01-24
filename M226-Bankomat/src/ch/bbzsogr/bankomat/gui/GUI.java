@@ -26,6 +26,7 @@ public class GUI extends Application {
     @FXML
     Button btnStop, btnCorr, btnHelp, btnOk;
 
+
     // Screen Area
     @FXML
     TextArea screen;
