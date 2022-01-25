@@ -30,6 +30,8 @@ public class BankCard {
     private String cardExpirationMonth;
     private String cardExpirationYear;
     private String cardPinCode;
+
+    private int remainingAttempts = 3;
     
     /**
      * Creates a new BankKarte instance. This instance then contains all the information about the card that it needs.
