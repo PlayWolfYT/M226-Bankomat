@@ -5,14 +5,12 @@
  */
 package ch.bbzsogr.bankomat.main;
 
-import ch.bbzsogr.bankomat.BankCard;
+import ch.bbzsogr.bankomat.remote.BankSystem;
+
 import java.io.File;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
-import java.util.Scanner;
 
 /**
  *
@@ -20,6 +18,7 @@ import java.util.Scanner;
  */
 public class Bankomat {
 
+    public static final BankSystem BANK_SYSTEM = new BankSystem();
     public static final File CARD_FOLDER = new File("./resources/cards");
 
     /**

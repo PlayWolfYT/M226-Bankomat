@@ -20,12 +20,12 @@ import java.util.stream.Collectors;
  */
 public class BankAccount {
     
-    private String accountIBAN;
+    private final String accountIBAN;
     private boolean accountLocked;
     private double accountSaldo;
     private double accountWithdrawalLimit;
     
-    public BankAccount(String accountIBAN) throws NumberFormatException, IOException {
+    public BankAccount(String accountIBAN) throws Exception {
         this.accountIBAN = accountIBAN;
         loadFromFile();
     }
@@ -37,11 +37,12 @@ public class BankAccount {
         this.writeToFile();
     }
 
-    private void loadFromFile() throws NumberFormatException, IOException {
+    private void loadFromFile() throws Exception {
         BufferedReader reader = new BufferedReader(new FileReader(BankSystem.BANK_FILE));
 
         String line;
 
+        boolean accountExists = false;
         while((line = reader.readLine()) != null) {
 
             // Bank file is seperated with ; so we split to get our data
@@ -50,10 +51,15 @@ public class BankAccount {
             // if we are not interested in this line we skip it.
             if(!this.accountIBAN.equals(data[0])) continue;
 
+            accountExists = true;
             this.accountLocked = Boolean.parseBoolean(data[1]);
             this.accountSaldo = Double.parseDouble(data[2]);
             this.accountWithdrawalLimit = Double.parseDouble(data[3]);
             break;
+        }
+
+        if(!accountExists) {
+            throw new Exception("Could not find account");
         }
 
         reader.close();
@@ -91,6 +97,22 @@ public class BankAccount {
         writer.write(String.join(System.lineSeparator(), data));
         writer.flush();
         writer.close();
+    }
+
+    public double withdraw(double amount){
+        if (this.accountSaldo >= amount){
+            this.accountSaldo -= amount;
+            try {
+                this.writeToFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+                this.accountSaldo += amount;
+                return -1;
+            }
+            return this.accountSaldo;
+        } else {
+            return -1;
+        }
     }
 
     public boolean isAccountLocked() {

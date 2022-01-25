@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -11,18 +10,15 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1260.0" style="-fx-background-color: #AAAAAA;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bbzsogr.bankomat.gui.GUI">
-   <Button fx:id="btnNbr4" layoutX="389.0" layoutY="580.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="4">
+   <Button fx:id="btnNbr4" layoutX="389.0" layoutY="580.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="4">
       <font>
          <Font size="36.0" />
       </font>
       <effect>
-         <Lighting diffuseConstant="1.3" specularConstant="0.1" surfaceScale="3.0">
+         <Lighting diffuseConstant="1.3" light="$null" specularConstant="0.1" surfaceScale="3.0">
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
@@ -35,13 +31,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr7" layoutX="389.0" layoutY="670.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="7">
+   <Button fx:id="btnNbr7" layoutX="389.0" layoutY="670.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="7">
       <font>
          <Font size="36.0" />
       </font>
@@ -50,13 +43,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr0" layoutX="479.0" layoutY="760.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="0">
+   <Button fx:id="btnNbr0" layoutX="479.0" layoutY="760.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="0">
       <font>
          <Font size="36.0" />
       </font>
@@ -65,9 +55,6 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
@@ -80,13 +67,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr8" layoutX="479.0" layoutY="670.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="8">
+   <Button fx:id="btnNbr8" layoutX="479.0" layoutY="670.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="8">
       <font>
          <Font size="36.0" />
       </font>
@@ -95,13 +79,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr9" layoutX="569.0" layoutY="670.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="9">
+   <Button fx:id="btnNbr9" layoutX="569.0" layoutY="670.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="9">
       <font>
          <Font size="36.0" />
       </font>
@@ -110,13 +91,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr6" layoutX="569.0" layoutY="580.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="6">
+   <Button fx:id="btnNbr6" layoutX="569.0" layoutY="580.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="6">
       <font>
          <Font size="36.0" />
       </font>
@@ -125,13 +103,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr5" layoutX="479.0" layoutY="580.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="5">
+   <Button fx:id="btnNbr5" layoutX="479.0" layoutY="580.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="5">
       <font>
          <Font size="36.0" />
       </font>
@@ -140,13 +115,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr1" layoutX="389.0" layoutY="490.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="1">
+   <Button fx:id="btnNbr1" layoutX="389.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="1">
       <font>
          <Font size="36.0" />
       </font>
@@ -155,13 +127,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr2" layoutX="479.0" layoutY="490.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="2">
+   <Button fx:id="btnNbr2" layoutX="479.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="2">
       <font>
          <Font size="36.0" />
       </font>
@@ -170,13 +139,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr3" layoutX="569.0" layoutY="490.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="3">
+   <Button fx:id="btnNbr3" layoutX="569.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="3">
       <font>
          <Font size="36.0" />
       </font>
@@ -185,13 +151,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnOk" layoutX="689.0" layoutY="760.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #00FF00;" text="OK">
+   <Button fx:id="btnOk" layoutX="689.0" layoutY="760.0" mnemonicParsing="false" onAction="#onOkayButton" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #00FF00;" text="OK">
       <font>
          <Font size="36.0" />
       </font>
@@ -200,13 +163,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnHelp" layoutX="689.0" layoutY="670.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #FFFFFF;" text="HELP">
+   <Button fx:id="btnHelp" layoutX="689.0" layoutY="670.0" mnemonicParsing="false" onAction="#onHelpButton" prefHeight="80.0" prefWidth="160.0" text="HELP">
       <font>
          <Font size="36.0" />
       </font>
@@ -215,13 +175,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnCorr" layoutX="689.0" layoutY="580.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #FFFF00;" text="CORR">
+   <Button fx:id="btnCorr" layoutX="689.0" layoutY="580.0" mnemonicParsing="false" onAction="#onCorrButton" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #FFFF00;" text="CORR">
       <font>
          <Font size="36.0" />
       </font>
@@ -230,13 +187,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnStop" layoutX="689.0" layoutY="490.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="STOP">
+   <Button fx:id="btnStop" layoutX="689.0" layoutY="490.0" mnemonicParsing="false" onAction="#onStopButton" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="STOP">
       <font>
          <Font size="36.0" />
       </font>
@@ -245,18 +199,15 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <ComboBox prefWidth="150.0" />
    <TextArea fx:id="screen" layoutX="230.0" layoutY="130.0" prefHeight="320.0" prefWidth="800.0">
       <effect>
          <InnerShadow />
-      </effect></TextArea>
-   <Button fx:id="btnTopLft" layoutX="139.0" layoutY="171.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+      </effect>
+   </TextArea>
+   <Button fx:id="btnTopLft" layoutX="139.0" layoutY="171.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
       <font>
          <Font size="36.0" />
       </font>
@@ -265,13 +216,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnBotLft" layoutX="139.0" layoutY="322.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+   <Button fx:id="btnBotLft" layoutX="139.0" layoutY="322.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
       <font>
          <Font size="36.0" />
       </font>
@@ -280,13 +228,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnTopRgt" layoutX="1039.0" layoutY="171.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+   <Button fx:id="btnTopRgt" layoutX="1039.0" layoutY="171.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
       <font>
          <Font size="36.0" />
       </font>
@@ -295,13 +240,10 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnBotRgt" layoutX="1039.0" layoutY="323.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+   <Button fx:id="btnBotRgt" layoutX="1039.0" layoutY="323.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
       <font>
          <Font size="36.0" />
       </font>
@@ -310,9 +252,6 @@
             <bumpInput>
                <Shadow />
             </bumpInput>
-            <light>
-               <Light.Distant />
-            </light>
          </Lighting>
       </effect>
    </Button>
