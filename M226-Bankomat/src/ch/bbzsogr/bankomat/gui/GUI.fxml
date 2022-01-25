@@ -3,8 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.effect.Lighting?>
@@ -254,7 +252,7 @@
       </effect>
    </Button>
    <ComboBox prefWidth="150.0" />
-   <TextArea fx:id="screen" layoutX="230.0" layoutY="130.0" prefHeight="320.0" prefWidth="800.0" textAlignment="CENTER">
+   <TextArea fx:id="screen" layoutX="230.0" layoutY="130.0" prefHeight="320.0" prefWidth="800.0">
       <effect>
          <InnerShadow />
       </effect></TextArea>
@@ -321,36 +319,5 @@
    <Label fx:id="labelBotLft" layoutX="249.0" layoutY="354.0" />
    <Label fx:id="labelTopLft" layoutX="249.0" layoutY="202.0" />
    <Label fx:id="labelTopRgt" layoutX="981.0" layoutY="202.0" textAlignment="RIGHT" />
-   <Label fx:id="labelBotRgt" layoutX="981.0" layoutY="354.0" textAlignment="RIGHT">
-      <graphic>
-         <ComboBox prefWidth="150.0" />
-      </graphic></Label>
-   <DropdownButton layoutX="607.0" layoutY="282.0">
-       <items>
-           <MenuItem text="Choice 1" />
-           <MenuItem text="Choice 2" />
-           <MenuItem text="Choice 3" />
-       </items>
-   </DropdownButton>
-   <DropdownButton layoutX="10.0" layoutY="10.0">
-      <items>
-         <MenuItem text="Choice 1" />
-         <MenuItem text="Choice 2" />
-         <MenuItem text="Choice 3" />
-      </items>
-   </DropdownButton>
-   <DropdownButton layoutX="10.0" layoutY="6.0">
-      <items>
-         <MenuItem text="Choice 1" />
-         <MenuItem text="Choice 2" />
-         <MenuItem text="Choice 3" />
-      </items>
-   </DropdownButton>
-   <Slider layoutX="623.0" layoutY="220.0" orientation="VERTICAL" />
-   <ComboBox layoutX="555.0" layoutY="278.0" prefWidth="150.0" />
-   <ComboBox layoutX="555.0" layoutY="278.0" prefWidth="150.0" />
-   <ComboBox layoutX="555.0" layoutY="278.0" prefWidth="150.0" />
-   <ComboBox layoutX="331.0" layoutY="58.0" prefWidth="150.0" />
-   <ComboBox prefWidth="150.0" />
-   <ComboBox layoutX="268.0" layoutY="-76.0" prefWidth="150.0" />
+   <Label fx:id="labelBotRgt" layoutX="981.0" layoutY="354.0" textAlignment="RIGHT" />
 </AnchorPane>

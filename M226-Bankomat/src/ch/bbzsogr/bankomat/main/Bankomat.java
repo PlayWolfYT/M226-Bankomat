@@ -7,7 +7,11 @@ package ch.bbzsogr.bankomat.main;
 
 import ch.bbzsogr.bankomat.BankCard;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -16,11 +20,13 @@ import java.util.Scanner;
  */
 public class Bankomat {
 
+    public static final File CARD_FOLDER = new File("./resources/cards");
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         System.out.print("Enter card number: ");
         String cardNumber = scanner.nextLine();
         System.out.println("card number: " + cardNumber);
@@ -48,7 +54,24 @@ public class Bankomat {
         System.out.println("READING FROM REMOTE BANK");
         // TODO: Read data from remote
 
-        scanner.close();
+        scanner.close();*/
+
+        getCards();
     }
+
+    public static ArrayList<String> getCards() {
+        ArrayList<String> cards = new ArrayList<>();
+
+        if(!CARD_FOLDER.exists()) CARD_FOLDER.mkdirs();
+
+        // Filter cards that have a .lock file
+        for(File file : Objects.requireNonNull(CARD_FOLDER.listFiles())) {
+            if(file.getName().endsWith(".lock")) cards.remove(file.getName().replace(".lock", ""));
+            else cards.add(file.getName());
+        }
+
+        return cards;
+    }
+
     
 }
