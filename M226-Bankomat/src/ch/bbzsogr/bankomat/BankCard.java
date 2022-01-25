@@ -149,7 +149,7 @@ public class BankCard {
 
     private void blockCard(){
         try {
-            new File(this.cardFile.getAbsolutePath() + ".lock").createNewFile();
+            boolean ignored = new File(this.cardFile.getAbsolutePath() + ".lock").createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -201,12 +201,12 @@ public class BankCard {
         return cardExpirationYear;
     }
 
-    public static enum ValidationError {
+    public enum ValidationError {
         NOT_A_NUMBER,
         INVALID_PIN,
         PIN_SAME_AS_OLD,
         PIN_SMALLER_MINIMUM,
         PIN_BIGGER_MAXIMUM,
-        UNKNOWN;
+        UNKNOWN
     }
 }
