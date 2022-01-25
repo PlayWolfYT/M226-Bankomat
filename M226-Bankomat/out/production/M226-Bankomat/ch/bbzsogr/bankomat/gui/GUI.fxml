@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -9,8 +11,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1260.0" style="-fx-background-color: #AAAAAA;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bbzsogr.bankomat.gui.GUI">
-   <Button fx:id="btnNbr4" layoutX="389.0" layoutY="580.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="4">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1260.0" style="-fx-background-color: #AAAAAA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bbzsogr.bankomat.gui.GUIController">
+   <Button fx:id="btnNbr4" focusTraversable="false" layoutX="389.0" layoutY="580.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="4">
       <font>
          <Font size="36.0" />
       </font>
@@ -22,7 +24,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button layoutX="389.0" layoutY="760.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+   <Button focusTraversable="false" layoutX="389.0" layoutY="760.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
       <font>
          <Font size="36.0" />
       </font>
@@ -34,7 +36,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr7" layoutX="389.0" layoutY="670.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="7">
+   <Button fx:id="btnNbr7" focusTraversable="false" layoutX="389.0" layoutY="670.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="7">
       <font>
          <Font size="36.0" />
       </font>
@@ -46,7 +48,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr0" layoutX="479.0" layoutY="760.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="0">
+   <Button fx:id="btnNbr0" focusTraversable="false" layoutX="479.0" layoutY="760.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="0">
       <font>
          <Font size="36.0" />
       </font>
@@ -58,7 +60,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button layoutX="569.0" layoutY="760.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+   <Button focusTraversable="false" layoutX="569.0" layoutY="760.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
       <font>
          <Font size="36.0" />
       </font>
@@ -70,7 +72,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr8" layoutX="479.0" layoutY="670.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="8">
+   <Button fx:id="btnNbr8" focusTraversable="false" layoutX="479.0" layoutY="670.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="8">
       <font>
          <Font size="36.0" />
       </font>
@@ -82,7 +84,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr9" layoutX="569.0" layoutY="670.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="9">
+   <Button fx:id="btnNbr9" focusTraversable="false" layoutX="569.0" layoutY="670.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="9">
       <font>
          <Font size="36.0" />
       </font>
@@ -94,7 +96,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr6" layoutX="569.0" layoutY="580.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="6">
+   <Button fx:id="btnNbr6" focusTraversable="false" layoutX="569.0" layoutY="580.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="6">
       <font>
          <Font size="36.0" />
       </font>
@@ -106,7 +108,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr5" layoutX="479.0" layoutY="580.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="5">
+   <Button fx:id="btnNbr5" focusTraversable="false" layoutX="479.0" layoutY="580.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="5">
       <font>
          <Font size="36.0" />
       </font>
@@ -118,7 +120,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr1" layoutX="389.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="1">
+   <Button fx:id="btnNbr1" focusTraversable="false" layoutX="389.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="1">
       <font>
          <Font size="36.0" />
       </font>
@@ -130,7 +132,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr2" layoutX="479.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="2">
+   <Button fx:id="btnNbr2" focusTraversable="false" layoutX="479.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="2">
       <font>
          <Font size="36.0" />
       </font>
@@ -142,7 +144,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnNbr3" layoutX="569.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="3">
+   <Button fx:id="btnNbr3" focusTraversable="false" layoutX="569.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNumberButton" prefHeight="80.0" prefWidth="80.0" text="3">
       <font>
          <Font size="36.0" />
       </font>
@@ -154,7 +156,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnOk" layoutX="689.0" layoutY="760.0" mnemonicParsing="false" onAction="#onOkayButton" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #00FF00;" text="OK">
+   <Button fx:id="btnOk" focusTraversable="false" layoutX="689.0" layoutY="760.0" mnemonicParsing="false" onAction="#onOkayButton" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #00FF00;" text="OK" textFill="#030000">
       <font>
          <Font size="36.0" />
       </font>
@@ -166,7 +168,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnHelp" layoutX="689.0" layoutY="670.0" mnemonicParsing="false" onAction="#onHelpButton" prefHeight="80.0" prefWidth="160.0" text="HELP">
+   <Button fx:id="btnHelp" focusTraversable="false" layoutX="689.0" layoutY="670.0" mnemonicParsing="false" onAction="#onHelpButton" prefHeight="80.0" prefWidth="160.0" text="HELP" textFill="#030000">
       <font>
          <Font size="36.0" />
       </font>
@@ -178,7 +180,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnCorr" layoutX="689.0" layoutY="580.0" mnemonicParsing="false" onAction="#onCorrButton" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #FFFF00;" text="CORR">
+   <Button fx:id="btnCorr" focusTraversable="false" layoutX="689.0" layoutY="580.0" mnemonicParsing="false" onAction="#onCorrButton" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #FFFF00;" text="CORR" textFill="#030000">
       <font>
          <Font size="36.0" />
       </font>
@@ -190,7 +192,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnStop" layoutX="689.0" layoutY="490.0" mnemonicParsing="false" onAction="#onStopButton" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="STOP">
+   <Button fx:id="btnStop" focusTraversable="false" layoutX="689.0" layoutY="490.0" mnemonicParsing="false" onAction="#onStopButton" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="STOP" textFill="#030000">
       <font>
          <Font size="36.0" />
       </font>
@@ -202,12 +204,12 @@
          </Lighting>
       </effect>
    </Button>
-   <TextArea fx:id="screen" layoutX="230.0" layoutY="130.0" prefHeight="320.0" prefWidth="800.0">
+   <TextArea editable="false" focusTraversable="false" layoutX="230.0" layoutY="130.0" prefHeight="320.0" prefWidth="800.0">
       <effect>
          <InnerShadow />
       </effect>
    </TextArea>
-   <Button fx:id="btnTopLft" layoutX="139.0" layoutY="171.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
+   <Button fx:id="btnTopLft" focusTraversable="false" layoutX="139.0" layoutY="171.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
       <font>
          <Font size="36.0" />
       </font>
@@ -219,7 +221,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnBotLft" layoutX="139.0" layoutY="322.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
+   <Button fx:id="btnBotLft" focusTraversable="false" layoutX="139.0" layoutY="322.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
       <font>
          <Font size="36.0" />
       </font>
@@ -231,7 +233,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnTopRgt" layoutX="1039.0" layoutY="171.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
+   <Button fx:id="btnTopRgt" focusTraversable="false" layoutX="1039.0" layoutY="171.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
       <font>
          <Font size="36.0" />
       </font>
@@ -243,7 +245,7 @@
          </Lighting>
       </effect>
    </Button>
-   <Button fx:id="btnBotRgt" layoutX="1039.0" layoutY="323.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
+   <Button fx:id="btnBotRgt" focusTraversable="false" layoutX="1039.0" layoutY="323.0" mnemonicParsing="false" onAction="#onActionButton" prefHeight="80.0" prefWidth="80.0">
       <font>
          <Font size="36.0" />
       </font>
@@ -255,8 +257,29 @@
          </Lighting>
       </effect>
    </Button>
-   <Label fx:id="labelBotLft" layoutX="249.0" layoutY="354.0" />
-   <Label fx:id="labelTopLft" layoutX="249.0" layoutY="202.0" />
-   <Label fx:id="labelTopRgt" layoutX="981.0" layoutY="202.0" textAlignment="RIGHT" />
-   <Label fx:id="labelBotRgt" layoutX="981.0" layoutY="354.0" textAlignment="RIGHT" />
+   <Label fx:id="labelBotLft" focusTraversable="false" layoutX="241.0" layoutY="323.0" prefHeight="80.0" prefWidth="80.0" wrapText="true">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+   <Label fx:id="labelTopLft" focusTraversable="false" layoutX="241.0" layoutY="170.0" prefHeight="80.0" prefWidth="80.0" wrapText="true">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+   <Label fx:id="labelTopRgt" alignment="CENTER_RIGHT" focusTraversable="false" layoutX="940.0" layoutY="170.0" prefHeight="80.0" prefWidth="80.0" textAlignment="RIGHT" wrapText="true">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+   <Label fx:id="labelBotRgt" alignment="CENTER_RIGHT" focusTraversable="false" layoutX="940.0" layoutY="322.0" prefHeight="80.0" prefWidth="80.0" textAlignment="RIGHT" wrapText="true">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+   <ComboBox fx:id="comboBoxCard" focusTraversable="false" layoutX="555.0" layoutY="14.0" prefWidth="150.0" promptText="Select Card" />
+   <Label fx:id="screen" alignment="CENTER" focusTraversable="false" layoutX="328.0" layoutY="150.0" prefHeight="280.0" prefWidth="600.0" textAlignment="CENTER" wrapText="true">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Label>
 </AnchorPane>

@@ -18,8 +18,6 @@ import java.util.Objects;
  */
 public class Bankomat {
 
-    public static final BankSystem BANK_SYSTEM = new BankSystem();
-    public static final File CARD_FOLDER = new File("./resources/cards");
 
     /**
      * @param args the command line arguments
@@ -54,23 +52,9 @@ public class Bankomat {
         // TODO: Read data from remote
 
         scanner.close();*/
-
-        getCards();
     }
 
-    public static ArrayList<String> getCards() {
-        ArrayList<String> cards = new ArrayList<>();
 
-        if(!CARD_FOLDER.exists()) CARD_FOLDER.mkdirs();
-
-        // Filter cards that have a .lock file
-        for(File file : Objects.requireNonNull(CARD_FOLDER.listFiles())) {
-            if(file.getName().endsWith(".lock")) cards.remove(file.getName().replace(".lock", ""));
-            else cards.add(file.getName());
-        }
-
-        return cards;
-    }
 
     
 }
